@@ -1,11 +1,9 @@
 
 .movie-card {
-    border-radius: 13px;
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s ease;
     border: none;
-    width: 200px;
-    height: 315px;
     background-color: transparent;
 }
 .movie-card:hover {
