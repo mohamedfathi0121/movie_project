@@ -1,1 +1,11 @@
-<p>movies works!</p>
+<div class="row mx-0">
+  <app-sidebar class="d-none d-lg-block col-lg-2 px-0" [isVisible]="sidebarVisible"></app-sidebar>
+
+  <div class ="col-lg-10" [ngClass]="{ 'content': sidebarVisible, 'content-full': !sidebarVisible }">
+    <div class="row">    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+    </div>
+<div class="row">      <app-movie-list></app-movie-list>
+</div>
+
+  </div>
+  </div>
