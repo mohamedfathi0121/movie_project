@@ -4,7 +4,11 @@
   <div class ="col-lg-10" [ngClass]="{ 'content': sidebarVisible, 'content-full': !sidebarVisible }">
     <div class="row">    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
     </div>
-<div class="row">      <app-movie-list></app-movie-list>
+<div class="row">
+  <app-movie-list [category]="'popular'"></app-movie-list>
+<app-movie-list [category]="'top_rated'"></app-movie-list>
+<app-movie-list [category]="'upcoming'"></app-movie-list>
+<app-movie-list [category]="'now_playing'"></app-movie-list>
 </div>
 
   </div>
