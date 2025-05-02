@@ -9,7 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 export const routes: Routes = [
     //{ path: 'config', component: ConfigComponent },
  
-  { path: '**', component: NotFoundComponent },
+  
   
 
 ];

@@ -27,38 +27,10 @@ export class MovieService {
     const url = `${this.baseUrl}/${category}`;
     const params = new HttpParams().set('api_key', this.apiKey);
 
-    const maxPerPage = 20;
-
-    if (limit && limit <= maxPerPage) {
       return this.http.get<any>(url, { params }).pipe(
         map(res => res.results.slice(0, limit))
       );
-    }
-
-    if (!limit) {
-      return this.http.get<any>(url, { params }).pipe(
-        map(res => res.results) // Page 1
-      );
-    }
-
-    const pagesNeeded = Math.ceil(limit / maxPerPage);
-    const requests = [];
-
-    for (let page = 1; page <= pagesNeeded; page++) {
-      requests.push(
-        this.http.get<any>(url, {
-          params: params.set('page', page)
-        })
-      );
-    }
-
-    return forkJoin(requests).pipe(
-      map(responses =>
-        responses
-          .flatMap(res => res.results)
-          .slice(0, limit)
-      )
-    );
+    
   }
   
 }
