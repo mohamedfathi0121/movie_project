@@ -16,5 +16,5 @@ import { MoviesComponent } from './components/movies/movies.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  
+
 }

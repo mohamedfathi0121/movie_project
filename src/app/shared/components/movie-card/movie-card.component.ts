@@ -1,5 +1,6 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { Movie } from '../../../models/movie';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './movie-card.component.css'
 })
 export class MovieCardComponent {
-  toggleFavorite(): void {
-  }
+
+  @Input() movie!: Movie;
+
 }
