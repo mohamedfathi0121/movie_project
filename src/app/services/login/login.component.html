@@ -1,0 +1,71 @@
+<div class="d-flex vh-100">
+  <!-- Left Side: Login Form -->
+  <div class="w-50 d-flex flex-column justify-content-center align-items-center text-white bg-dark p-5 position-relative">
+
+    <!-- Logo + Small Icon -->
+    <div class="position-absolute d-flex align-items-center" style="top: 20px; left: 30px;">
+      <img src="assets/images/SvgjsG2062 (1).png" alt="Small Icon" style="width: 24px; height: 24px;" class="me-2">
+      <img src="assets/images/logo.png" alt="Logo" style="width: 120px;">
+    </div>
+
+    <!-- Welcome Text -->
+    <div class="text-center mb-4">
+      <h2 class="mb-1">Welcome back, Olivia</h2>
+      <h5 class="text-secondary">Welcome back! Please enter your details.</h5>
+    </div>
+
+    <!-- Google Button -->
+    <div class="mb-3 w-75">
+      <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center btn-sm"
+              (click)="signInWithGoogle()">
+        <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google Icon"
+             style="width: 18px; height: 18px;" class="me-2">
+        Sign up with Google
+      </button>
+    </div>
+
+    <!-- Divider -->
+    <div class="d-flex align-items-center mb-3 w-75">
+      <hr class="flex-grow-1 me-2">
+      <span class="text-secondary">or</span>
+      <hr class="flex-grow-1 ms-2">
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="w-75">
+      <input type="email" formControlName="email"
+             class="form-control form-control-sm mb-2 text-secondary bg-white border-secondary"
+             placeholder="Email">
+      <input type="password" formControlName="password"
+             class="form-control form-control-sm mb-2 text-secondary bg-white border-secondary"
+             placeholder="Password">
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <input type="checkbox" id="remember" class="form-check-input">
+          <label for="remember" class="form-check-label text-white small">Remember me for 30 days</label>
+        </div>
+        <a href="#" class="text-white text-decoration-none small">Forgot password</a>
+      </div>
+
+      <button type="submit" class="btn btn-light btn-sm w-100">Log in</button>
+    </form>
+
+    <p class="mt-3 text-white small">Don't have an account? <a href="/register" >Sign up for free</a>
+    </p>
+  </div>
+
+  <!-- Right Side: Movie Banner -->
+  <div class="w-50 d-flex flex-column justify-content-end p-5 text-white"
+       style="background-image: url('assets/images/login.png') ;width: 100%;  height: 100%; background-size: cover;">
+    <h3>Top Gun: Maverick</h3>
+    <p>2022 | PG-13 | 2h 10m</p>
+    <p>Genres: Action, Drama</p>
+    <div class="d-flex align-items-center">
+      <img src="assets/images/IMDb.png" alt="IMDb" width="40" class="me-2">
+      <span class="me-1">⭐</span> 8.5 / 10
+    </div>
+  </div>
+</div>
+
+
