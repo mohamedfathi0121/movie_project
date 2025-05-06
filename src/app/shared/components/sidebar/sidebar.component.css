@@ -1,5 +1,5 @@
-ul li:first-child {
-  background-color: aqua;
+.selected-section {
+  background-color: #3DD2CC;
   border-radius: 20px;
   color: black;
 }
@@ -9,6 +9,11 @@ ul li:first-child {
   border-top-right-radius:50px;
   width: clamp(165px, 100%, 300px);
   border-bottom-right-radius:50px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease-in-out;
 }
 
 
@@ -22,9 +27,14 @@ ul li:first-child {
 }
 
 
-/* @media (max-width: 768px) {
+@media (max-width: 992px) {
   .sidebar {
-    display: none;
+ width: 100%;
+ height: inherit;
+border-top-right-radius: 0;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius:20px ;
+
   }
 
-} */
+}

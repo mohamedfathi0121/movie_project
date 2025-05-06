@@ -1,15 +1,24 @@
 <div class="row mx-0">
-  <app-sidebar class="d-none d-lg-block col-lg-2 px-0" [isVisible]="sidebarVisible"></app-sidebar>
+  <app-sidebar
+    class="d-none d-lg-block col-lg-2 px-0"
+    [isVisible]="sidebarVisible"
+  ></app-sidebar>
 
-  <div class ="col-lg-10" [ngClass]="{ 'content': sidebarVisible, 'content-full': !sidebarVisible }">
-    <div class="row">    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+  <div
+    class="col-12 col-lg-10"
+    [ngClass]="{ content: sidebarVisible, 'content-full': !sidebarVisible }"
+  >
+    <div class="row">
+      <app-header (toggleSidebar)="toggleSidebar()"></app-header>
     </div>
-<div class="row">
-  <app-movie-list [category]="'popular'"></app-movie-list>
-<app-movie-list [category]="'top_rated'"></app-movie-list>
-<app-movie-list [category]="'upcoming'"></app-movie-list>
-<app-movie-list [category]="'now_playing'"></app-movie-list>
+    <div class="row">
+      <app-sidebar
+        class="d-lg-none col-lg-2 px-0"
+        [isVisible]="sidebarVisible"
+      ></app-sidebar>
+    </div>
+    <div class="row">
+<router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-
-  </div>
-  </div>

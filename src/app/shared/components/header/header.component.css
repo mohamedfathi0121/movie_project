@@ -2,6 +2,7 @@
   background-color: #333;
   color: #E8E8E8;
   border-radius: 50px;
+  height: 55px;
 }
 .nav-search::placeholder{
   color: white;
