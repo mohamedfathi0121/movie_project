@@ -1,23 +1,17 @@
 import { RedirectCommand, Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ConfigComponent } from './config/config.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { MoviesComponent } from './components/movies/movies.component';
-import { HomeComponent } from './home/home.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { MoviesCategoriesComponent } from './components/movies-categories/movies-categories.component';
 
 export const routes: Routes = [
-    { path: 'config', component: ConfigComponent },
-    {path:'' ,redirectTo:'/home',pathMatch:'full'},
-    { path: 'home', component: HomeComponent },
-    { path: 'profile', component: ProfileComponent },
-    {path:"**" , component: NotFoundComponent},
-
-
-
-
-
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'wishlist', component: WishlistComponent },
+  { path: 'movies/:id', component: MoviesCategoriesComponent },
+  { path: '**', component: NotFoundComponent },
 ];
-
-
-
