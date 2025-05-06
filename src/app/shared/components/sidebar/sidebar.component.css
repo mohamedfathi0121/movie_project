@@ -6,11 +6,10 @@ ul li:first-child {
 .sidebar {
   height: 100vh;
   background-color: #333;
-  border-top-right-radius:50px;
+  border-top-right-radius: 50px;
   width: clamp(165px, 100%, 300px);
-  border-bottom-right-radius:50px;
+  border-bottom-right-radius: 50px;
 }
-
 
 .content {
   margin-left: 250px;
@@ -20,7 +19,6 @@ ul li:first-child {
 .content-full {
   margin-left: 0;
 }
-
 
 /* @media (max-width: 768px) {
   .sidebar {
