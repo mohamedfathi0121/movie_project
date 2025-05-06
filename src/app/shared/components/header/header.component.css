@@ -1,0 +1,13 @@
+.nav-search {
+  background-color: #333;
+  color: #E8E8E8;
+  border-radius: 50px;
+}
+.nav-search::placeholder{
+  color: white;
+  text-indent: 15px;
+}
+.profile-img {
+  width: 30px;
+  height: 30px;
+}
