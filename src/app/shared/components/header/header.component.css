@@ -1,10 +1,10 @@
 .nav-search {
   background-color: #333;
-  color: #E8E8E8;
+  color: #e8e8e8;
   border-radius: 50px;
   height: 55px;
 }
-.nav-search::placeholder{
+.nav-search::placeholder {
   color: white;
   text-indent: 15px;
 }

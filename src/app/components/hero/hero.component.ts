@@ -1,0 +1,40 @@
+
+import { Component, type OnInit } from "@angular/core"
+import{CommonModule}  from '@angular/common';
+
+interface Slide {
+  title: string
+  image: string
+}
+
+@Component({
+  selector: "app-hero",
+  imports:[CommonModule],
+  templateUrl: "./hero.component.html",
+})
+export class HeroComponent implements OnInit {
+  slides: Slide[] = [
+    {
+      title: "MOONFALL",
+      image: "./images/Group 19 (1).jpg",
+    },
+    {
+      title: "DUNE",
+      image: "./images/original-747d9e9d9d1cbd8af7b0ef6745139462.webp",
+    },
+    {
+      title: "INTERSTELLAR",
+      image: "./images/original-7b79d07d38d7f269dfc69ffc40fb7dbb.webp",
+    },
+    {
+      title: "AVATAR",
+      image: "./images/7e94c932-1574-41f3-b710-72ee106a9898.jpg",
+    },
+  ]
+
+  ngOnInit(): void {
+    // Bootstrap carousel will automatically initialize
+    // with the data-bs-ride and data-bs-interval attributes
+  }
+}
+
