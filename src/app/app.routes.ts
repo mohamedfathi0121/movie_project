@@ -6,6 +6,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { HomeComponent } from './components/home/home.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { MoviesCategoriesComponent } from './components/movies-categories/movies-categories.component';
+import { DetailsComponent } from './components/details/details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'movies/:id', component: MoviesCategoriesComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: '**', component: NotFoundComponent },
 ];
