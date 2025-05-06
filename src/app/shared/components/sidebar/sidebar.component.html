@@ -1,0 +1,33 @@
+<!-- <div class="sidebar" [ngClass]="{ 'sidebar': true, 'd-none d-md-block': !isVisible }"> -->
+<div class="sidebar">
+  <a routerLink="/home"
+    ><h4 class="text-info p-3"><img src="/Vector.svg" /></h4
+  ></a>
+  <ul class="nav flex-column px-3">
+    @for(sec of section;track sec.id){ @if (sec.id == 1) {
+    <li
+      class="nav-item mb-2"
+      routerLink="{{ sec.href }}"
+      routerLinkActive="selected-section"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a (click)="navigate(sec.id)" class="nav-link text-white"
+        >{{ sec.icon }}{{ sec.name }}</a
+      >
+    </li>
+
+    } @else {
+    <li
+      class="nav-item mb-2"
+      [routerLink]="[sec.href, sec.param]"
+      routerLinkActive="selected-section"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a (click)="navigate(sec.id)" class="nav-link text-white"
+        >{{ sec.icon }}{{ sec.name }}</a
+      >
+    </li>
+
+    } } @empty { there is no section }
+  </ul>
+</div>

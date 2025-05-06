@@ -8,7 +8,7 @@ import { routes } from './app/app.routes';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from './environment/environment';
-import { provideToastr } from 'ngx-toastr'; // ⬅️ مهم
+import { provideToastr } from 'ngx-toastr'; // ⬅️ 
 
 bootstrapApplication(AppComponent, {
   providers: [

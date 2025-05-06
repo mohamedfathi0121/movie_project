@@ -1,6 +1,19 @@
+
 /* تخصيصات Bootstrap للواجهة العربية */
 .rtl .btn { font-family: 'Tajawal', sans-serif; }
 .toast-top-center {
   margin-top: 20px;
   text-align: center;
+}
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #191919;
+  color: #E8E8E8;
+  margin: 0;
+  padding: 0;
+
+
 }

@@ -1,0 +1,25 @@
+.nav-search {
+  background-color: #333;
+  color: #e8e8e8;
+  border-radius: 50px;
+  height: 55px;
+}
+.nav-search::placeholder {
+  color: white;
+  text-indent: 15px;
+}
+.profile-img {
+  width: 30px;
+  height: 30px;
+}
+.active-link {
+  background-color: #3DD2CC;
+  border: #3DD2CC SOLID 5px;
+  border-radius: 50%;
+
+
+}
+.heart {
+color: #3DD2CC!important;
+}
+
