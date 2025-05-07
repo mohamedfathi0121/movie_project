@@ -2,7 +2,6 @@ import { MovieCardComponent } from './../../shared/components/movie-card/movie-c
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterOutlet } from '@angular/router';
-import { MovieListComponent } from '../../shared/components/movie-list/movie-list.component';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
@@ -10,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-movies',
-  imports: [RouterOutlet, MovieListComponent, MovieCardComponent, SharedModule,HeaderComponent,SidebarComponent,CommonModule,FormsModule],
+  imports: [RouterOutlet, SharedModule,HeaderComponent,SidebarComponent,CommonModule,FormsModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
