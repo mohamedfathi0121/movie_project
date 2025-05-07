@@ -15,7 +15,7 @@ export class MovieService {
 
   getMovieById(id: number): Observable<Movie> {
     const url = `${this.baseUrl}/${id}`;
-    const params = new HttpParams().set('Authorization', this.apiKey);
+    const params = new HttpParams().set('api_key', this.apiKey);
 
     return this.http.get<Movie>(url, { params });
   }
