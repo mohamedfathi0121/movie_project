@@ -94,7 +94,7 @@ export class RegisterComponent implements OnInit {
 
     const { email, password } = this.registerForm.value;
 
-    this.authService.register(email, password)
+    this.authService.register(email, password, this.registerForm.value.name)
       .then(userCredential => {
         if (userCredential.user) {
           sendEmailVerification(userCredential.user)
