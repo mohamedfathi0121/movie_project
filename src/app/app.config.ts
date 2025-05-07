@@ -9,7 +9,7 @@ import { provideHttpClient } from '@angular/common/http';
 // Firebase imports
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { environment } from '../environment/environment'; // تأكد من المسار الصحيح
+import { environment } from '../environment/environment'; 
 
 export const appConfig: ApplicationConfig = {
   providers: [
