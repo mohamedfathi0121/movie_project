@@ -1,8 +1,7 @@
 <!-- <div class="sidebar" [ngClass]="{ 'sidebar': true, 'd-none d-md-block': !isVisible }"> -->
 <div class="sidebar">
-  <a routerLink="/movies"
-    ><h4 class="text-info p-3"><img src="/Vector.svg" /></h4
-  ></a>
+  <img src="/Vector.svg" routerLink="/movies" class="logo" />
+
   <ul class="nav flex-column px-3">
     @for(sec of section;track sec.id){ @if (sec.id == 1) {
     <li

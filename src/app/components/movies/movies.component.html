@@ -1,11 +1,11 @@
 <div class="row mx-0">
   <app-sidebar
-    class="d-none d-lg-block col-lg-2 px-0"
+    class="d-none d-lg-block col-lg-3 col-xxl-2 px-0"
     [isVisible]="sidebarVisible"
   ></app-sidebar>
 
   <div
-    class="col-12 col-lg-10"
+    class="col-12 col-lg-9 col-xxl-10"
     [ngClass]="{ content: sidebarVisible, 'content-full': !sidebarVisible }"
   >
     <div class="row">
@@ -13,7 +13,7 @@
     </div>
     <div class="row">
       <app-sidebar
-        class="d-lg-none col-lg-2 px-0"
+        class="d-lg-none col-lg-2  px-0"
         [isVisible]="sidebarVisible"
       ></app-sidebar>
     </div>
