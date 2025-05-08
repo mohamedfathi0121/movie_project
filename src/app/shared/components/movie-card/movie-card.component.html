@@ -1,7 +1,9 @@
 <div class="card movie-card">
+
   <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="card-img" alt="Movie Poster" routerLink="details/{{movie.id}}" />
   <div class="wish-button">
     <i class="favorite-btn bi bi-heart"></i>
   </div>
   <div class="rating-badge"><i class="bi bi-star-fill"></i> {{movie.vote_average}}</div>
 </div>details/:id
+

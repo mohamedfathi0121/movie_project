@@ -1,5 +1,8 @@
 .position {
   position: absolute;
-  top: 85px;
-  left: 320px;
+  top: 110px;
+  left: 290px;
+}
+.main-color {
+  background-color: #3dd2cc;
 }

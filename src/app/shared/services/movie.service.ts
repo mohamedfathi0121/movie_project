@@ -29,6 +29,7 @@ export class MovieService {
     return this.http
       .get<any>(url, { params })
       .pipe(map((res) => res.results.slice(0, limit)));
+
   }
 
   getPagedMoviesByCategory(
@@ -72,5 +73,6 @@ export class MovieService {
         totalPages: res.total_pages,
       }))
     );
+
   }
 }
