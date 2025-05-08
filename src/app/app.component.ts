@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { MoviesComponent } from './components/movies/movies.component';
 import { DetailsComponent } from './components/details/details.component';
 
-
 @Component({
   selector: 'app-root',
   imports: [
@@ -23,6 +22,6 @@ import { DetailsComponent } from './components/details/details.component';
     DetailsComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {}
