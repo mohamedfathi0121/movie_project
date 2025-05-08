@@ -29,5 +29,50 @@ export class MovieService {
     return this.http
       .get<any>(url, { params })
       .pipe(map((res) => res.results.slice(0, limit)));
+
+  }
+
+  getPagedMoviesByCategory(
+    category: 'now_playing' | 'popular' | 'top_rated' | 'upcoming',
+    page: number
+  ): Observable<{movies:Movie[], numOfPages:number}> {
+    const url = `${this.baseUrl}/${category}`;
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('page', page);
+    return this.http.get<any>(url, { params }).pipe(map((res) => ({movies:res.results,numOfPages:res.total_pages})));
+  }
+
+
+  getNumberOfPages(
+    category: 'now_playing' | 'popular' | 'top_rated' | 'upcoming'
+  ): Observable<number> {
+    const url = `${this.baseUrl}/${category}`;
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('page', 1);
+    return this.http.get<any>(url, { params }).pipe(
+      map((res) => {
+        const totalResults = res.total_results;
+        const totalPages = res.total_pages;
+        return totalPages;
+      }
+    ));
+  }
+  searchMovies(
+    query: string,
+  ): Observable<{ movies: Movie[]; totalPages: number }> {
+    const url = `https://api.themoviedb.org/3/search/movie`;
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('query', query)
+
+    return this.http.get<any>(url, { params }).pipe(
+      map((res) => ({
+        movies: res.results,
+        totalPages: res.total_pages,
+      }))
+    );
+
   }
 }
