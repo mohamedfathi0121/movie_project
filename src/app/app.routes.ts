@@ -9,8 +9,8 @@ import { WishlistComponent } from "./components/wishlist/wishlist.component";
 import { LoginComponent } from "./services/login/login.component";
 import { RegisterComponent } from "./services/register/register.component";
 import { VerifyEmailComponent } from "./services/register/verifyemail";
-import { MovieListComponent } from "./shared/components/movie-list/movie-list.component";
 import { MoviesComponent } from "./components/movies/movies.component";
+import { SearchComponent } from "./search/search.component";
 
 
 export const routes: Routes = [
@@ -19,6 +19,8 @@ export const routes: Routes = [
     children :[
     { path: '', component: HomeComponent },
     { path: 'movies-categories/:id', component: MoviesCategoriesComponent },
+    { path: 'details/:id', component: DetailsComponent },
+    {path: 'search', component: SearchComponent},
     ]
    },
   { path: '', redirectTo: 'login', pathMatch: 'full' },

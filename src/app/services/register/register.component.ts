@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
+
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
@@ -65,7 +66,6 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
-  // ✅ تحقق من قوة الباسورد
   strongPasswordValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value || '';
     const hasUpperCase = /[A-Z]/.test(value);
@@ -76,14 +76,12 @@ export class RegisterComponent implements OnInit {
     return !valid ? { weak: true } : null;
   }
 
-  // ✅ تحقق من تطابق كلمة المرور
   passwordsMatchValidator(group: AbstractControl): ValidationErrors | null {
     const password = group.get('password')?.value;
     const confirm = group.get('confirmPassword')?.value;
     return password === confirm ? null : { mismatch: true };
   }
 
-  // ✅ عند الضغط على زر التسجيل
   onSubmit(): void {
     this.submitted = true;
 
@@ -92,28 +90,25 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    const { email, password } = this.registerForm.value;
+    const { email, password, name, phone, age } = this.registerForm.value;
 
-    this.authService.register(email, password, this.registerForm.value.name)
-      .then(userCredential => {
-        if (userCredential.user) {
+    this.authService.register(email, password, name, phone, age)
+      .then((userCredential) => {
+        if (userCredential?.user) {
           sendEmailVerification(userCredential.user)
-            .then(() => {
+
+              this.authService.logout();
               this.toastr.success('Account created! Check your email to verify.');
               this.router.navigate(['/login']);
+            }
             })
-            .catch(err => {
-              this.toastr.error('Could not send verification email: ' + err.message);
-            });
-        }
-      })
+
       .catch(error => {
         this.toastr.error(error.message, 'Registration Failed');
       });
   }
 
-  // ✅ تسجيل دخول باستخدام Google
-  googleLogine(): void {
+  googleLogin(): void {
     this.authService.googleLogin()
       .then(() => {
         this.toastr.success('Signed in with Google');
