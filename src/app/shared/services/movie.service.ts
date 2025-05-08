@@ -58,4 +58,19 @@ export class MovieService {
       }
     ));
   }
+  searchMovies(
+    query: string,
+  ): Observable<{ movies: Movie[]; totalPages: number }> {
+    const url = `https://api.themoviedb.org/3/search/movie`;
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('query', query)
+
+    return this.http.get<any>(url, { params }).pipe(
+      map((res) => ({
+        movies: res.results,
+        totalPages: res.total_pages,
+      }))
+    );
+  }
 }
