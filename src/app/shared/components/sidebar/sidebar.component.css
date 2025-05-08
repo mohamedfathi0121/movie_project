@@ -13,6 +13,8 @@ li:hover {
   color: #3dd2cc;
 
   border-right: 5px solid #127e7a;
+  transition: border 200ms ease-out;
+
 }
 a:hover {
   color: #3dd2cc;
