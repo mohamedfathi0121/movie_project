@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterEvent, RouterLink, RouterLinkActive } from '@angular/router';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,6 @@ import { RouterEvent, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @Output() toggleSidebar = new EventEmitter<void>();
+  constructor(public sidebarService: SidebarService) { }
+
 }

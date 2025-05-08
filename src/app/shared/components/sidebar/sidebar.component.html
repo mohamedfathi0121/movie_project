@@ -1,6 +1,11 @@
 <!-- <div class="sidebar" [ngClass]="{ 'sidebar': true, 'd-none d-md-block': !isVisible }"> -->
 <div class="sidebar">
-  <img src="/Vector.svg" routerLink="/movies" class="logo" />
+  <img
+    src="/Vector.svg"
+    routerLink="/movies"
+    class="logo"
+    (click)="sidebarService.disppearSidebar()"
+  />
 
   <ul class="nav flex-column px-3">
     @for(sec of section;track sec.id){ @if (sec.id == 1) {
@@ -9,10 +14,9 @@
       routerLink="{{ sec.href }}"
       routerLinkActive="selected-section"
       [routerLinkActiveOptions]="{ exact: true }"
+      (click)="sidebarService.disppearSidebar()"
     >
-      <a (click)="navigate(sec.id)" class="nav-link text-white"
-        >{{ sec.icon }}{{ sec.name }}</a
-      >
+      <a class="nav-link text-white">{{ sec.icon }}{{ sec.name }}</a>
     </li>
 
     } @else {
@@ -21,6 +25,7 @@
       [routerLink]="[sec.href, sec.param]"
       routerLinkActive="selected-section"
       [routerLinkActiveOptions]="{ exact: true }"
+      (click)="sidebarService.disppearSidebar()"
     >
       <a (click)="navigate(sec.id)" class="nav-link text-white"
         >{{ sec.icon }}{{ sec.name }}</a

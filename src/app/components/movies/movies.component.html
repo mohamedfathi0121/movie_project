@@ -1,22 +1,22 @@
 <div class="row mx-0">
   <app-sidebar
     class="d-none d-lg-block col-lg-3 col-xxl-2 px-0"
-    [isVisible]="sidebarVisible"
   ></app-sidebar>
 
   <div
     class="col-12 col-lg-9 col-xxl-10"
-    [ngClass]="{ content: sidebarVisible, 'content-full': !sidebarVisible }"
   >
     <div class="row">
-      <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+      <app-header ></app-header>
     </div>
-    <div class="row">
-      <app-sidebar
-        class="d-lg-none col-lg-2  px-0"
-        [isVisible]="sidebarVisible"
-      ></app-sidebar>
-    </div>
+    @if(sidebarService.isVisible){
+      <div class="row" >
+        <app-sidebar
+          class="d-lg-none col-lg-2  px-0"
+        ></app-sidebar>
+      </div>
+    }
+
     <div class="row">
 <router-outlet></router-outlet>
     </div>
