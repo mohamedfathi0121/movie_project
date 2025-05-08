@@ -2,9 +2,9 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
 
 // Firebase imports
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -20,6 +20,9 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
 
+    // HttpClient
+    provideHttpClient(),
+
     // Toastr
     provideAnimations(), // Required for toastr
     provideToastr({
@@ -29,10 +32,5 @@ export const appConfig: ApplicationConfig = {
       progressBar: true,
       closeButton: true,
     }),
-    provideHttpClient(),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideRouter(routes),
-    provideToastr(), // ⬅️ لإصلاح مشكلة ToastConfig
   ],
 };
