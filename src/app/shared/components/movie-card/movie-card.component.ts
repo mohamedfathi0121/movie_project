@@ -25,9 +25,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
   async toggleWishlist(id:number) {
-    await this.toggleMovieInWishlist(id);
-    this.getIsWishlisted(id).then((isWishlisted) => {
-      this.isWishlistedF = isWishlisted;
+    this.toggleMovieInWishlist(id).then(() => {
+      this.getIsWishlisted(id).then((isWishlisted) => {
+        this.isWishlistedF = isWishlisted;
+      });
     });
   }
   getIsWishlisted(id:number):Promise<boolean> {
