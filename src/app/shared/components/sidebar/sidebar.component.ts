@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +11,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  @Input() isVisible = true;
+  constructor(public sidebarService: SidebarService) {}
+
 selectedSection: number = 1;
   section: ISection[] = [
     {icon: '🏠 ', name: 'Home', id: 1 ,href:"/movies"},

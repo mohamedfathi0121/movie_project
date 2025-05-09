@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MovieCardComponent} from './../../shared/components/movie-card/movie-card.component';
+import {MovieCardComponent} from './../../shared/components/movie-card/movie-card.component'; 
 import { Movie } from '../../models/movie';
+
+
 
 
 @Component({
@@ -12,5 +14,5 @@ import { Movie } from '../../models/movie';
   imports: [MovieCardComponent,CommonModule],
 })
 export class WishlistComponent {
-  movie!: Movie;
+  movies: Movie[]=[];
 }
