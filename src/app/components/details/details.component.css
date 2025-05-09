@@ -1,8 +1,26 @@
-.position {
+/* .position {
+  position: absolute;
+  top: 110px;
+  left: 290px;
+} */
+.main-color {
+  background-color: #3dd2cc;
+}
+@media (max-width: 1090px) {
+  .hide {
+    display: none;
+  }
+}
+/* .position {
   position: absolute;
   top: 110px;
   left: 290px;
 }
-.main-color {
-  background-color: #3dd2cc;
-}
+
+@media (max-width: 768px) {
+  .position {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+} */
