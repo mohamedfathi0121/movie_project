@@ -17,3 +17,8 @@ body {
 
 
 }
+/* إعادة تعريف موضع التوالستر */
+.toast-top-right {
+  top: 12px !important;
+  right: 12px !important;
+}

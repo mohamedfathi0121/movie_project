@@ -9,6 +9,8 @@ import { routes } from './app.routes';
 // Firebase imports
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
 import { environment } from '../environment/environment'; // تأكد من المسار الصحيح
 
 export const appConfig: ApplicationConfig = {
@@ -19,6 +21,7 @@ export const appConfig: ApplicationConfig = {
     // Firebase providers
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
 
     // HttpClient
     provideHttpClient(),
@@ -27,7 +30,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(), // Required for toastr
     provideToastr({
       timeOut: 3000,
-      positionClass: 'toast-top-center',
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
       progressBar: true,
       closeButton: true,
