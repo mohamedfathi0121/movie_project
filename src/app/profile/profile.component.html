@@ -1,0 +1,13 @@
+<div *ngIf="loading">
+  <p>جارٍ تحميل البيانات...</p>
+</div>
+
+<div *ngIf="!loading && userData">
+  <h2>الملف الشخصي</h2>
+  <p><strong>الاسم:</strong> {{ userData.name }}</p>
+  <p><strong>البريد الإلكتروني:</strong> {{ userData.email }}</p>
+</div>
+
+<div *ngIf="!loading && !userData">
+  <p>لم يتم العثور على بيانات المستخدم.</p>
+</div>

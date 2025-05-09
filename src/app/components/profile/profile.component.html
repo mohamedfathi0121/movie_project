@@ -1,17 +1,26 @@
-<div class="container py-5 bg-dark text-white rounded profile-container">
+<div *ngIf="!isLoading; else loading">
+  <div class="container py-5 bg-dark text-white rounded profile-container">
     <div class="row align-items-center">
-   
-      <div class="col-md-4 text-center mb-4">
-        <img src="https://i.pravatar.cc/200?img=68" alt="Profile" class="profile-image img-fluid rounded-circle shadow-lg border border-light" />
+      <div class="col-md-4 text-center mb-4" [@fadeInImage]>
+        <img
+        src="https://ui-avatars.com/api/?name={{ userName }}"
+          class="profile-image img-fluid rounded-circle shadow-lg border border-light" />
       </div>
-  
-    
-      <div class="col-md-8 text-md-start text-center">
-        <h2 class="mb-3 text-warning fade-in-up">User Name</h2>
-        <p class="mb-1 text-muted fade-in-up">
-          <i class="bi bi-envelope-fill me-2"></i>email&#64;example.com
+      <div class="col-md-8 text-md-start text-center" [@slideUp]>
+        <h2 class="mb-3 text-warning">{{ userName }}</h2>
+        <p class="mb-1 text-muted">
+          <i class="bi bi-envelope-fill me-2"></i>{{ userEmail }}
         </p>
+        <p class="text-secondary small">UID: {{ userUid }}</p>
+        
       </div>
     </div>
   </div>
-  
+</div>
+
+<ng-template #loading>
+  <div class="text-center text-light py-5">
+    <div class="spinner-border text-warning"></div>
+    <p class="mt-3">Loading profile...</p>
+  </div>
+</ng-template>
