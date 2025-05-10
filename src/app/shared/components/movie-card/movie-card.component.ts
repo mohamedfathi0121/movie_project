@@ -8,6 +8,7 @@ import { Auth, authState, onAuthStateChanged, User } from '@angular/fire/auth';
 import { firstValueFrom } from 'rxjs';
 import { LoginRegisterPopupComponent } from "../login-register-popup/login-register-popup/login-register-popup.component";
 
+
 @Component({
   selector: 'app-movie-card',
   imports: [RouterLink, CommonModule, LoginRegisterPopupComponent],
@@ -15,7 +16,9 @@ import { LoginRegisterPopupComponent } from "../login-register-popup/login-regis
   styleUrl: './movie-card.component.css',
 })
 export class MovieCardComponent implements OnInit {
-  constructor(private firestore:Firestore) {}
+
+  
+constructor(private firestore:Firestore) {}
   private auth = inject(Auth);
   @Input() movie!: Movie;
   isWishlistedF: boolean = false;
