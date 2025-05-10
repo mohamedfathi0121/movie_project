@@ -70,7 +70,7 @@
             <input type="text" class="form-control" formControlName="phone">
             <div *ngIf="submitted && f['phone'].errors" class="text-danger small">
               <div *ngIf="f['phone'].errors['required']">Phone is required</div>
-              <div *ngIf="f['phone'].errors['pattern']">Phone must be 11 digits</div>
+              <div *ngIf="f['phone'].errors['pattern']">Phone must be 11 digits in format "01150198566"</div>
             </div>
           </div>
 
