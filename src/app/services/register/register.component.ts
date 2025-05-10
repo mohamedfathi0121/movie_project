@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       phone: ['', [
         Validators.required,
-        Validators.pattern('^[1-9]\d{0,3}[\s\-().]*\d{3,15}(?:[\s\-().]*\d{2,15})*$')
+        Validators.pattern(/^(01){1}(0|1|2|5){1}([0-9]{8})$/)
       ]],
       age: ['', [
         Validators.required,
@@ -99,7 +99,6 @@ export class RegisterComponent implements OnInit {
           sendEmailVerification(userCredential.user)
 
               this.authService.logout();
-              this.toastr.success('Account created! Check your email to verify.');
               this.router.navigate(['/login']);
             }
             })
