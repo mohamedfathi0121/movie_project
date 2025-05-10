@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SidebarService } from '../../services/sidebar.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +12,11 @@ import { SidebarService } from '../../services/sidebar.service';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  constructor(public sidebarService: SidebarService) {}
+isloged :boolean = false;
+
+  constructor(public sidebarService: SidebarService , private authService:AuthService) {
+    this.isloged = this.authService.isLogged();
+  }
 
 selectedSection: number = 1;
   section: ISection[] = [
@@ -24,6 +29,12 @@ selectedSection: number = 1;
   navigate(id: number) {
 this.selectedSection= id
   }
+  logout(){
+    this.authService.logout();
+    location.reload();
+
+  };
+
 }
 interface ISection {
   icon:string
