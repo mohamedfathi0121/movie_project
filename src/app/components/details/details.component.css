@@ -6,6 +6,9 @@
 .main-color {
   background-color: #3dd2cc;
 }
+.main-font-color {
+  color: #3dd2cc !important;
+}
 @media (max-width: 1090px) {
   .hide {
     display: none;

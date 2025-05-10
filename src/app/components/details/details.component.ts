@@ -15,6 +15,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 export class DetailsComponent implements OnInit {
   randomNumber: number = 0;
   isLoading: boolean = true;
+  recommendations: Movie[] = [];
 
   movie: Movie | null = null;
   constructor(
@@ -22,20 +23,29 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    const movieId = Number(this.route.snapshot.paramMap.get('id'));
-    this.movieService.getMovieById(movieId).subscribe({
-      next: (movieData) => {
-        this.movie = movieData;
-        console.log(this.movie);
-        this.isLoading = false;
-      },
-      error: (err) => {
-        this.movie = null;
-        this.isLoading = false;
-      },
+    this.route.params.subscribe((params) => {
+      const movieId = Number(params['id']);
+      this.isLoading = true;
+
+      this.movieService.getMovieById(movieId).subscribe({
+        next: (movieData) => {
+          this.movie = movieData;
+          this.isLoading = false;
+        },
+        error: () => {
+          this.movie = null;
+          this.isLoading = false;
+        },
+      });
+
+      this.movieService.getRecommendations(movieId).subscribe((movies) => {
+        this.recommendations = movies;
+      });
+
+      this.generateRandomNumber();
     });
-    this.generateRandomNumber();
   }
+
   generateRandomNumber(): void {
     this.randomNumber = Math.floor(Math.random() * 100) + 1;
   }
