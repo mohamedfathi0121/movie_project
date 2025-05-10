@@ -12,11 +12,20 @@ export class LoginRegisterPopupComponent {
   @Input() visible: boolean = false;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  constructor(private router: Router) {}
   closeModal(): void {
     this.visible = false;
     this.visibleChange.emit(this.visible);
   }
   onBackdropClick(event: MouseEvent): void {
+    this.closeModal();
+  }
+  onLoginClick(): void {
+    this.router.navigate(['/login']);
+    this.closeModal();
+  }
+  onRegisterClick(): void {
+    this.router.navigate(['/register']);
     this.closeModal();
   }
 }
