@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MovieService } from '../../services/movie.service';
 import { SearchService } from '../../services/search.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -27,12 +28,16 @@ export class HeaderComponent {
   currenturl: string = '';
   searchquery: string = '';
   isSearch: boolean = false;
+  isloged: boolean = false;
   constructor(
     public sidebarService: SidebarService,
     private router: Router,
     private movieService: MovieService,
-    private searchService: SearchService
-  ) {}
+    private searchService: SearchService,
+    private authService: AuthService
+  ) {
+    this.isloged = this.authService.isLogged();
+  }
 
   getCurrentUrl() {
     if (this.router.url !== '/movies/search') {

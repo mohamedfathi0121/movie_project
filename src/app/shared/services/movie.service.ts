@@ -73,4 +73,13 @@ export class MovieService {
       }))
     );
   }
+  getRecommendations(
+    movieId: number
+  ): Observable<Movie[]> {
+    const url = `${this.baseUrl}/${movieId}/recommendations`;
+    const params = new HttpParams().set('api_key', this.apiKey);
+    return this.http.get<any>(url, { params }).pipe(
+      map((res) => res.results)
+    );
+  }
 }

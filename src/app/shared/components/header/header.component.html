@@ -9,11 +9,11 @@
       ☰
     </button>
   </div>
-  <div class="d-none d-sm-block col-sm-8 col-lg-9">
+  <div class="d-none d-sm-block col-sm-7 col-lg-9">
     <div class="row align-content-between">
       <input
         type="text"
-        class="form-control col-10 w-50 nav-search text-white border-0 p-2 flex-grow-1"
+        class="form-control col-10 nav-search text-white border-0 p-2 flex-grow-1"
         placeholder="&#x2315;  Search for movies, TV shows..."
         (focus)="getCurrentUrl()"
         (input)="search()"
@@ -22,7 +22,7 @@
       />
 
       <button
-        class="btn reset-button"
+        class="btn reset-button col-2"
         (click)="reset()"
         [ngClass]="{
           'reset-active': searchbar.value.length > 0,
@@ -34,6 +34,7 @@
     </div>
   </div>
 
+  @if(isloged){
   <div
     class="d-flex justify-content-end align-items-center gap-3 col-6 col-sm-2 col-lg-1"
   >
@@ -51,6 +52,16 @@
         alt="User"
     /></a>
   </div>
+  } @else {
+  <div
+    class="d-flex justify-content-end align-items-center gap-3 col-6 col-sm-3 col-lg-2"
+  >
+    <div class="btn-animated">
+      <button class="btn login-btn" routerLink="/login">sign in</button>
+    </div>
+  </div>
+
+  }
   <div class="col-12 d-sm-none mt-3">
     <div class="row align-content-between flex-nowrap">
       <input
@@ -62,8 +73,17 @@
         [(ngModel)]="searchquery"
         #searchbar
       />
-      @if(1){
-      <button class="btn btn-outline-light col-2 reset-button">Reset</button>}
+
+      <button
+        class="btn btn-outline-light col-2 reset-button"
+        (click)="reset()"
+        [ngClass]="{
+          'reset-active': searchbar.value.length > 0,
+          disabled: searchbar.value.length === 0
+        }"
+      >
+        Reset
+      </button>
     </div>
   </div>
 </nav>
