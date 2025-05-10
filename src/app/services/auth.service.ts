@@ -66,7 +66,6 @@ export class AuthService {
 
   logout() {
     return signOut(this.auth).then(() => {
-      this.router.navigate(['/login']);
     });
   }
 
