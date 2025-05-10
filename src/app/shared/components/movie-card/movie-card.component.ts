@@ -1,33 +1,38 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Movie } from '../../../models/movie';
 import { Router, RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { MovieCardServiceService } from './movie-card-service.service';
 import { doc, Firestore, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
 import { Auth, authState, onAuthStateChanged, User } from '@angular/fire/auth';
 import { firstValueFrom } from 'rxjs';
+import { LoginRegisterPopupComponent } from "../login-register-popup/login-register-popup/login-register-popup.component";
 
 @Component({
   selector: 'app-movie-card',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule, LoginRegisterPopupComponent],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.css',
 })
 export class MovieCardComponent implements OnInit {
   constructor(private firestore:Firestore) {}
   private auth = inject(Auth);
-
   @Input() movie!: Movie;
   isWishlistedF: boolean = false;
+  isModalVisible: boolean = false;
   ngOnInit() {
     this.getIsWishlisted(this.movie.id).then((isWishlisted) => {
       this.isWishlistedF = isWishlisted;
     });
   }
+  openModal(): void {
+    this.isModalVisible = true;
+  }
   async toggleWishlist(id:number) {
-    await this.toggleMovieInWishlist(id);
-    this.getIsWishlisted(id).then((isWishlisted) => {
-      this.isWishlistedF = isWishlisted;
+    this.toggleMovieInWishlist(id).then(() => {
+      this.getIsWishlisted(id).then((isWishlisted) => {
+        this.isWishlistedF = isWishlisted;
+      });
     });
   }
   getIsWishlisted(id:number):Promise<boolean> {
@@ -42,7 +47,10 @@ export class MovieCardComponent implements OnInit {
 
   async toggleMovieInWishlist(movieId: number) {
     const user = await this.getCurrentUser();
-    if (!user) return;
+    if (!user){
+      this.openModal();
+      return;
+    }
 
     const userRef = doc(this.firestore, `users/${user.uid}`);
     const userSnap = await getDoc(userRef);
