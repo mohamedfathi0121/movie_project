@@ -15,7 +15,7 @@
         type="text"
         class="form-control col-10 nav-search text-white border-0 p-2 flex-grow-1"
         placeholder="&#x2315;  Search for movies, TV shows..."
-        (focus)="getCurrentUrl()"
+        (focus)="getCurrentUrl();search()"
         (input)="search()"
         [(ngModel)]="searchquery"
         #searchbar

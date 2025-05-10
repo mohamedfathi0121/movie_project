@@ -1,6 +1,7 @@
 ul {
   margin-top: 30px;
   list-style-type: none;
+  height: 75vh;
   padding: 0 !important;
 }
 li {

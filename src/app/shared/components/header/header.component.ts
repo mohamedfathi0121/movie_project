@@ -66,5 +66,6 @@ private clearSearch(): void {
   this.isSearch = false;
   this.searchquery = '';
     this.searchService.updateValue('');
-  this.router.navigate([this.currenturl]);
+    if (this.router.url=='/movies/search') {
+  this.router.navigate([this.currenturl]);}
 }}

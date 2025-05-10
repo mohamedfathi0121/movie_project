@@ -42,14 +42,14 @@
             <div *ngIf="submitted && f['password'].errors" class="text-danger small">
               <div *ngIf="f['password'].errors['required']">Password is required</div>
               <div *ngIf="f['password'].errors['minlength']">Minimum 8 characters Password must contain:
-                <ul class="mb-0">
+            </div>
+              <div *ngIf="f['password'].errors['weak']">
+    <ul class="mb-0">
                   <li>Uppercase letter</li>
                   <li>Lowercase letter</li>
                   <li>Number</li>
                   <li>Special character</li>
-                </ul></div>
-              <div *ngIf="f['password'].errors['weak']">
-
+                </ul>
               </div>
             </div>
           </div>
@@ -87,8 +87,8 @@
 
           <!-- Terms -->
           <div class="form-check mt-2">
-            <input type="checkbox" class="form-check-input" formControlName="terms" id="terms">
-            <label class="form-check-label text-white" for="terms">Accept Terms and Conditions</label>
+            <input type="checkbox" class="form-check-input check" formControlName="terms" id="terms">
+            <label class="form-check-label text-white " for="terms">Accept Terms and Conditions</label>
             <div *ngIf="submitted && f['terms'].errors" class="text-danger small">
               <div *ngIf="f['terms'].errors['required']">You must accept the terms</div>
             </div>
@@ -103,7 +103,7 @@
             Sign up with Google
           </button>
 
-          <p class="text-white mt-3">Already have an account? <a routerLink="/login" class="text-warning">Log in</a></p>
+          <p class="text-white mt-3">Already have an account? <a routerLink="/login" class="text-warning" class="log-link">Log in</a></p>
         </form>
       </div>
     </div>
