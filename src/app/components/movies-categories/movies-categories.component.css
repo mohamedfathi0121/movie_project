@@ -2,6 +2,7 @@
   background-color: white;
   border: white SOLID 5px;
   border-radius: 50px;
+  width: 75px;
   margin: 0 10PX;
 }
 .pagination-button2 {
