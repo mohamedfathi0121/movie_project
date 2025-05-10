@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
       name: ['', [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]+$'),
-        Validators.minLength(2),
+        Validators.minLength(3),
         Validators.maxLength(50)
       ]],
       email: ['', [
@@ -45,13 +45,14 @@ export class RegisterComponent implements OnInit {
       ]],
       password: ['', [
         Validators.required,
+
         Validators.minLength(8),
         this.strongPasswordValidator
       ]],
       confirmPassword: ['', Validators.required],
       phone: ['', [
         Validators.required,
-        Validators.pattern('^\\d{11}$')
+        Validators.pattern('^[1-9]\d{0,3}[\s\-().]*\d{3,15}(?:[\s\-().]*\d{2,15})*$')
       ]],
       age: ['', [
         Validators.required,
