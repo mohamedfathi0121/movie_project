@@ -2,12 +2,15 @@
 
   background-color: rgba(0, 0, 0, 0.6);
 }
-
 .r-button{
-  background-color: #3DD2CC;
-  color: white;
+  background-color: #3dd2cc;
+}
+.r-button:hover{
+  background-color: #34b4b0;
 }
 .l-button{
-  background-color: white;
-  color: #3DD2CC;
+  border-color: #3dd2cc;
+}
+.l-button:hover{
+  background-color: #34b4b0;
 }
