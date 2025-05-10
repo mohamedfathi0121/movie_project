@@ -7,18 +7,18 @@
 </div>
 
 <nav class="p-3 d-flex justify-content-center">
-  <ul class="pagination">
-    <li class="page-item">
+  <ul class="pagination row flex-wrap justify-content-center">
+    <li class="page-item col-auto">
       <button class="page-link pagination-button2" (click)="onPrevPage()" [ngClass]="{ disabled: currentPage === 1 }">Previous</button>
     </li>
     <li
-      class="page-item"
+      class="page-item col-auto"
       *ngFor="let i of numOfPages"
       (click)="onPageChange(i)"
     >
       <button class="page-link pagination-button"  [class.active]="currentPage === i">{{ i }}</button>
     </li>
-    <li class="page-item">
+    <li class="page-item col-auto">
       <button class="page-link pagination-button2" (click)="onNextPage()" [ngClass]="{ disabled: currentPage === numOfPages[numOfPages.length - 1] }">Next</button>
     </li>
   </ul>

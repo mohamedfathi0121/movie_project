@@ -20,8 +20,16 @@ export const routes: Routes = [
     component: MoviesComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'profile', component: ProfileComponent,canActivate: [authGuardGuard] },
-      { path: 'wishlist', component: WishlistComponent,canActivate: [authGuardGuard] },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [authGuardGuard],
+      },
+      {
+        path: 'wishlist',
+        component: WishlistComponent,
+        canActivate: [authGuardGuard],
+      },
       { path: 'movies-categories/:id', component: MoviesCategoriesComponent },
       { path: 'details/:id', component: DetailsComponent },
       { path: 'search', component: SearchComponent },
@@ -30,6 +38,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
-  {path: 'unauthorized', component: UnauthorizedComponent},
+  { path: 'unauthorized', component: UnauthorizedComponent },
   { path: '**', component: NotFoundComponent },
 ];
