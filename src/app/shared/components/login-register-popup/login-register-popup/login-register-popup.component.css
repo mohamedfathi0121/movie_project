@@ -2,3 +2,12 @@
 
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.r-button{
+  background-color: #3DD2CC;
+  color: white;
+}
+.l-button{
+  background-color: white;
+  color: #3DD2CC;
+}

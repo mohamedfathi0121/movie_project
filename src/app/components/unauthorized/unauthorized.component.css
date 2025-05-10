@@ -41,6 +41,15 @@
   animation: zoomFadeIn 1.2s ease-out, float 3s ease-in-out infinite;
 }
 
+.h-button{
+  background-color: #3DD2CC;
+  color: white;
+}
+.l-button:hover {
+  background-color: white;
+  color: #3DD2CC;
+}
+
 /* Keyframes Section */
 @keyframes fadeInBackground {
   0% {

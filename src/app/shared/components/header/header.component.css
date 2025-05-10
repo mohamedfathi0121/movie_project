@@ -77,6 +77,11 @@ color: #3DD2CC!important;
   z-index: 1;
   cursor: pointer;
 }
+.login-btn:hover {
+  background-color: #3DD2CC;
+
+}
+
 
 /* Snake Border (Animated Line Drawing) */
 .btn-animated::before {
