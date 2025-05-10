@@ -3,7 +3,6 @@ import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { MoviesCategoriesComponent } from './components/movies-categories/movies-categories.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { LoginComponent } from './services/login/login.component';
 import { RegisterComponent } from './services/register/register.component';
@@ -12,6 +11,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { SearchComponent } from './components/search/search.component';
 import { authGuardGuard } from './guards/auth-guard.guard';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },

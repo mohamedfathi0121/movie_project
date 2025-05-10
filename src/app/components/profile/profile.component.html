@@ -1,17 +1,42 @@
-<div class="container py-5 bg-dark text-white rounded profile-container">
-    <div class="row align-items-center">
-   
-      <div class="col-md-4 text-center mb-4">
-        <img src="https://i.pravatar.cc/200?img=68" alt="Profile" class="profile-image img-fluid rounded-circle shadow-lg border border-light" />
-      </div>
-  
-    
-      <div class="col-md-8 text-md-start text-center">
-        <h2 class="mb-3 text-warning fade-in-up">User Name</h2>
-        <p class="mb-1 text-muted fade-in-up">
-          <i class="bi bi-envelope-fill me-2"></i>email&#64;example.com
-        </p>
-      </div>
+<div class="container w-140 d-flex justify-content-center">
+
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="d-flex justify-content-center align-items-center w-100">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  
+
+  <!-- Profile Card -->
+  <div *ngIf="!loading && userData" class="profile-container fade-in-up w-100" style="max-width: 500px;">
+    <img 
+      [src]="'https://ui-avatars.com/api/?name=' + (userData.name || 'NA') + '&background=ffffff&color=3DD2CC&length=2'"
+      alt="Avatar"
+      class="profile-image mb-3"
+    />
+
+    <h2 class="text-warning text-center">Profile</h2>
+
+    <ul class="list-group list-group-flush text-center bg-transparent">
+      <li class="list-group-item bg-transparent text-white border-0">
+        <strong>Name:</strong> {{ userData.name || 'N/A' }}
+      </li>
+      <li class="list-group-item bg-transparent text-white border-0">
+        <strong>Email:</strong> {{ userData.email || 'N/A' }}
+      </li>
+      <li class="list-group-item bg-transparent text-white border-0" *ngIf="userData.phone">
+        <strong>Phone:</strong> {{ userData.phone }}
+      </li>
+      <li class="list-group-item bg-transparent text-white border-0" *ngIf="userData.age">
+        <strong>Age:</strong> {{ userData.age }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- No Data -->
+  <div *ngIf="!loading && !userData" class="text-center text-danger w-100">
+    <p>No user data found.</p>
+  </div>
+</div>
+
+
