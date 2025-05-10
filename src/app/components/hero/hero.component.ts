@@ -33,8 +33,7 @@ export class HeroComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    // Bootstrap carousel will automatically initialize
-    // with the data-bs-ride and data-bs-interval attributes
+    
   }
 }
 
