@@ -7,6 +7,7 @@ import { doc, Firestore, getDoc, setDoc, updateDoc } from '@angular/fire/firesto
 import { Auth, authState, onAuthStateChanged, User } from '@angular/fire/auth';
 import { firstValueFrom } from 'rxjs';
 
+
 @Component({
   selector: 'app-movie-card',
   imports: [RouterLink,CommonModule],
@@ -14,7 +15,9 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './movie-card.component.css',
 })
 export class MovieCardComponent implements OnInit {
-  constructor(private firestore:Firestore) {}
+
+  
+constructor(private firestore:Firestore) {}
   private auth = inject(Auth);
 
   @Input() movie!: Movie;
