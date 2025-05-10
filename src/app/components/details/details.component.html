@@ -60,7 +60,7 @@
                 >
                   <a
                     [routerLink]="['/movies/details', rec.id]"
-                    class="text-info text-decoration-none"
+                    class="text-info text-decoration-none main-font-color "
                   >
                     {{ rec.title }}
                   </a>
@@ -81,7 +81,7 @@
 
           <!-- Buttons -->
           <div class="d-flex gap-3 mt-4">
-            <button class="btn btn-outline-info rounded-pill">
+            <button class="btn btn-outline-info rounded-pill rate-btn">
               Top Rated Movie #{{ randomNumber }}
             </button>
             <div class="dropdown">
@@ -92,8 +92,8 @@
                 Spoken Language
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li class="mb-1" *ngFor="let lang of movie.spoken_languages">
-                  <span class="dropdown-item active">{{
+                <li class="mb-1 " *ngFor="let lang of movie.spoken_languages">
+                  <span class="dropdown-item active spoken-li">{{
                     lang.english_name
                   }}</span>
                 </li>

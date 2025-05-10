@@ -1,11 +1,10 @@
 ul {
   margin-top: 30px;
   list-style-type: none;
-  height: 75vh;
   padding: 0 !important;
 }
 li {
-  padding: 1.5vh;
+  padding: 1vh;
   width: 100%;
   margin: 1vh 0;
   cursor: pointer;

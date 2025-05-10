@@ -60,10 +60,13 @@ p {
 }
 
 .text-warning {
-  color: #ffc107 !important;
+  color: #3dd2cc !important;
 }
 
 .text-muted {
   color: #6c757d !important;
 }
 
+.spiner {
+  color: #3dd2cc;
+}

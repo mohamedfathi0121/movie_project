@@ -8,7 +8,7 @@
   margin-right: 10px;
 }
 .nav-search:focus {
-  outline: 5px solid #3DD2CC!important;
+  outline: 3px solid #3DD2CC!important;
 }
 .reset-button {
   background-color: #333;
@@ -38,7 +38,7 @@
 }
 .active-link {
   background-color: #3DD2CC;
-  border: #3DD2CC SOLID 5px;
+  border: #3DD2CC SOLID 3px;
   border-radius: 50%;
 
 

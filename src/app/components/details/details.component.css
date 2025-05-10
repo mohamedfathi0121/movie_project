@@ -9,6 +9,12 @@
 .main-font-color {
   color: #3dd2cc !important;
 }
+.spoken-li {
+background-color: #3dd2cc!important;}
+.rate-btn {
+  color: #3dd2cc;
+  outline-color: #3dd2cc!important;
+}
 @media (max-width: 1090px) {
   .hide {
     display: none;
